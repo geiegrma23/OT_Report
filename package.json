@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0",
+    "csv-writer": "^1.6.0",
+    "exceljs": "^4.3.0",
+    "flat": "^5.0.2",
+    "nodemailer": "^6.9.1",
+    "xlsx-populate": "^1.21.0"
+  }
+}

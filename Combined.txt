@@ -1,0 +1,78 @@
+const axios = require('axios');
+const fs = require('fs');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
+const url = 'http://ot.arecloudship.com/actionapi/ReportsAction/GetAPIData';
+
+// Get the current date and subtract 2 days
+const currentDate = new Date();
+const twoDaysAgo = new Date(currentDate.getTime() - (5 * 24 * 60 * 60 * 1000));
+
+// Format the date as mm/dd/yyyy
+const month = String(twoDaysAgo.getMonth() + 1).padStart(2, '0');
+const day = String(twoDaysAgo.getDate()).padStart(2, '0');
+const year = twoDaysAgo.getFullYear();
+const formattedDate = `${month}/${day}/${year}`;
+
+const data = {
+  "Report": {
+    "APIKey": "d67509ef-2f07-4cb2-a4d0-5066413fa280",
+    "SearchFields": [
+      {
+        "DataValue": formattedDate,
+        "DataComparer": ">=",
+        "DataField": "ShipDate"
+      },
+      {
+        "DataValue": currentDate,
+        "DataComparer": "<=",
+        "DataField": "ShipDate"
+      }
+    ]
+  },
+  "ClientKey": "17014d2a-eeca-45d5-8353-96aea6860c3d"
+};
+
+axios.post(url, data)
+  .then(response => {
+    const results = response.data.Results.Result;
+    //const filteredResults = results.filter(result => result.Tracking_Status === 'DELIVERED');
+    //const filteredResults = results.filter(result => {return result.Carrier === "UPS" && result.Tracking_Status === "Delivered"});
+    const csvWriter = createCsvWriter({
+      path: 'results.csv',
+      header: [
+        { id: 'Ship_Number', title: 'Ship Number' },
+        { id: 'Ref', title: 'Ref' },
+        { id: 'Carrier', title: 'Carrier' },
+        { id: 'ShipMethod', title: 'Ship Method' },
+        { id: 'Tracking_Number', title: 'Tracking Number' },
+        { id: 'Shipped_Date', title: 'Shipped Date' },
+        { id: 'Names', title: 'Names' },
+        { id: 'Company', title: 'Company' },
+        { id: 'Address_1', title: 'Address 1' },
+        { id: 'City', title: 'City' },
+        { id: 'State', title: 'State' },
+        { id: 'Zip', title: 'Zip' },
+        { id: 'Country', title: 'Country' },
+        { id: 'Base_Rate', title: 'Base Rate' },
+        { id: 'Total_Charge', title: 'Total Charge' },
+        { id: 'Qty', title: 'Qty' },
+        { id: 'PalletQty', title: 'Pallet Qty' },
+        { id: 'Weight', title: 'Weight' },
+        { id: 'Dimensions', title: 'Dimensions' },
+        { id: 'Customer__', title: 'Customer' },
+        { id: 'Client_Customer', title: 'Client Customer' },
+        { id: 'Tracking_Status', title: 'Tracking Status' }
+      ]
+    });
+    csvWriter.writeRecords(results)
+      .then(() => {
+        console.log('Results saved to results.csv');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  })
+  .catch(error => {
+    console.log(error);
+  });

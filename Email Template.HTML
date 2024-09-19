@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<title>Your Order from {ShipFrom.Company} has shipped</title>
+	</head>
+	
+	<body>
+		<table class="MsoNormalTable" border="0" cellpadding="0" width="800" style="width:600.0pt">
+            <tbody>
+                <tr style="height:60.0pt">
+                    <td style="padding:.75pt .75pt .75pt 31.5pt;height:60.0pt">
+                        <p class="MsoNormal">
+                            <img width="75" src="C:/Users/geige/Desktop/KSP High Quality Logo JPEG_resized.jpg"/>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="MsoNormal">
+            <span style="display:none">
+											</span>
+        </p>
+        <table class="MsoNormalTable" border="0" cellpadding="0" width="600" style="width:6.25in">
+            <tbody>
+                <tr style="height:37.5pt">
+                    <td width="20" style="width:15.0pt;padding:0in 0in 0in 0in;height:37.5pt" />
+                    <td valign="bottom" style="background:#636466;padding: 0pt 0pt 5.75pt 5.75pt;height:37.5pt">
+                        <p class="MsoNormal">
+                            <span style="font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:white">Shipment Notification</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="MsoNormal">
+            <span style="display:none">
+											</span>
+        </p>
+        <table class="MsoNormalTable" border="0" cellpadding="0" width="630" style="width:472.5pt">
+            <tbody>
+                <tr style="height:7.5pt">
+                    <td style="padding:0in 0in 0in 0in;height:7.5pt" />
+                </tr>
+                <tr style="height:37.5pt">
+                    <td valign="top" style="padding:0in 0in 0in 22.5pt;height:37.5pt">
+                        <p class="MsoNormal">
+                            Please be advised that a shipment has been made on the order below:
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0in 0in 0in 0in">
+                        <table class="MsoNormalTable" border="0" cellpadding="0" width="600" style="width:6.25in">
+                            <tbody>
+                                <tr style="height:22.5pt">
+                                    <td width="30" style="width:22.5pt;padding:.75pt .75pt .75pt .75pt;height:22.5pt">
+                                    </td>
+                                    <td width="300" valign="bottom" style="width:225.0pt;background:#636466;padding:.75pt .75pt .75pt 7.5pt;height:22.5pt">
+                                        <p class="MsoNormal">
+                                            <b>
+												<span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:white">Shipment Information</span>
+											</b>
+                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:white">
+																					</span>
+                                            <o:p/>
+                                        </p>
+                                    </td>
+                                    <td width="20" style="width:15.0pt;padding:.75pt .75pt .75pt .75pt;height:22.5pt">
+                                    </td>
+                                    <td width="250" rowspan="2" style="width:187.5pt;padding:.75pt .75pt .75pt .75pt;height:22.5pt">
+                                        <table class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="width:100.0%;border:solid #636466 1.0pt;border-spacing:0px">
+                                            <tbody>
+                                                <tr style="height:22.5pt">
+                                                    <td valign="bottom" style="border:none;padding:.75pt .75pt .75pt 7.5pt;height:22.5pt">
+                                                        <p class="MsoNormal">
+                                                            <b>
+																<span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">Tracking Information</span>
+															</b>
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																									</span>
+                                                            <o:p/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr style="height:157.5pt">
+                                                    <td valign="top" style="border:none;padding:.75pt .75pt .75pt 7.5pt;height:157.5pt">
+                                                        <p class="MsoNormal" style="margin-bottom:12.0pt">
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																<br>
+																Carrier: {CarrierName}<br>
+																<br>
+																Shipped: {ShipDate}<br>
+																<br>
+																Tracking#: {Packages[0].TrackingNumber}
+															</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style="height:150.0pt; border-right: solid #636466 1pt; border-left: solid #636466 1pt; border-top: solid #636466 1pt; border-bottom: solid #636466 1pt;">
+                                    <td width="30" style="width:22.5pt;padding:.75pt .75pt .75pt .75pt;height:150.0pt">
+                                    </td>
+                                    <td width="400" valign="top" style="width:300.0pt;background:#E6E6E6;padding:.75pt .75pt .75pt 7.5pt;height:150.0pt">
+                                        <p class="MsoNormal" style="margin-bottom:12.0pt">
+                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+												Shipping From:
+												<br>
+												{ShipFrom.Company}<br>
+												{ShipFrom.Address1}<br>
+												{ShipFrom.City}, {ShipFrom.State} {ShipFrom.Zip}<br>
+												<br>
+												Delivering To:<br>
+												{ShipTo.Company}<br>
+												{ShipTo.Address1}<br>
+												{ShipTo.City}, {ShipTo.State} {ShipTo.Zip}<br>
+												<br>
+												<b>PHONE:</b> {ShipTo.Phone}<br>
+												<b>EMAIL:</b> <a href="mailto:{ToEmailAddresses}">{ToEmailAddresses}</a>
+											</span>
+                                            <o:p/>
+                                        </p>
+                                    </td>
+                                    <td style="padding:.75pt .75pt .75pt .75pt;height:150.0pt" />
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="padding:.75pt .75pt .75pt .75pt" />
+                                </tr>
+                                <tr>
+                                    <td width="30" style="width:22.5pt;padding:.75pt .75pt .75pt .75pt" />
+                                    <td colspan="3" style="padding:0in 0in 0in 0in;border-spacing:0px">
+                                        <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border-spacing:0px;cellspacing:0px">
+                                            <tbody>
+                                                <tr style="height:22.5pt">
+                                                    <td colspan="2" valign="bottom" style="background:#636466;padding:0in 0in 0in 7.5pt;height:22.5pt">
+                                                        <p class="MsoNormal">
+                                                            <b>
+																<span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:white">Order Information</span>
+															</b>
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:white">
+															</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" valign="top" style="width:30.0%;border:none;border-left:solid #636466 1.0pt;background:#E6E6E6;padding:0in 0in 0in 7.5pt">
+                                                        <p class="MsoNormal">
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																<br>
+																Order Number:
+															</span>
+                                                        </p>
+                                                    </td>
+                                                    <td width="70%" valign="top" style="width:70.0%;border:none;border-right:solid #636466 1.0pt;background:#E6E6E6;padding:0in 0in 0in 7.5pt">
+                                                        <p class="MsoNormal">
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																<br>
+																{OrderNumber}
+															</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" valign="top" style="width:30.0%;border-top:none;border-left:solid #636466 1.0pt;border-bottom:solid #636466 1.0pt;border-right:none;background:#E6E6E6;padding:0in 0in 0in 7.5pt">
+                                                        <p class="MsoNormal">
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																<br>
+																Customer PO Number:
+															</span>
+                                                        </p>
+                                                    </td>
+                                                    <td width="70%" valign="top" style="width:70.0%;border-top:none;border-left:none;border-bottom:solid #636466 1.0pt;border-right:solid #666666 1.0pt;background:#E6E6E6;padding:0in 0in 0in 7.5pt">
+                                                        <p class="MsoNormal" style="margin-bottom:12.0pt">
+                                                            <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#636466">
+																<br>
+																{PONumber}
+															</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="MsoNormal">
+            <span style="display:none">
+				<o:p>&nbsp;</o:p>
+			</span>
+        </p>
+        <p class="MsoNormal">
+            <br>
+            <br>
+            <br>
+            <br>
+			If you have received this e-mail in error, please notify the sender as such and delete the e-mail
+			from your system immediately. No one other than the intended recipient is allowed to use the
+			information contained herein or attached hereto in any way.
+
+			Si usted ha recibido este e-mail por error, favor de notificar al remitente como tal y borre este e-mail
+			de su systema inmediatamente. Ninguna otra persona mas que el recipiente intentado le es permitido el uso
+			de la informacion contenida dentro o adjuntada en cualquier manera.
+            <o:p/>
+        </p>
+
+	</body>
+</html>

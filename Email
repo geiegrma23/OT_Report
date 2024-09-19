@@ -1,0 +1,41 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+// SMTP configuration for Outlook 365
+const smtpConfig = {
+  host: 'smtp.office365.com',
+  port: 587,
+  secure: false,
+  requireTLS: true,
+  auth: {
+    user: 'mike.geiger@ksp3pl.com',
+    pass: 'cnhzlczgknsmzxfk',
+  },
+};
+
+// Create a Nodemailer transporter using the SMTP configuration
+const transporter = nodemailer.createTransport(smtpConfig);
+
+// Email details
+const mailOptions = {
+  from: 'mike.geiger@ksp3pl.com',
+  to: 'mike.geiger@ksp3pl.com',
+  subject: 'Test Email',
+  text: 'This is a test email sent from Node.js using Outlook 365 SMTP.',
+  attachments: [
+    {
+      filename: 'results.xlsx',
+      path: 'C:/Users/geige/Desktop/OT Report/results.xlsx', 
+    },
+  ],
+};
+
+// Send the email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.error('Error sending email:', error);
+  } else {
+    console.log('Email sent:', info.response);
+  }
+});
+
